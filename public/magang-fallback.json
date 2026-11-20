@@ -1,0 +1,203 @@
+[
+  {
+    "id": 1001,
+    "title": "Frontend Intern",
+    "company_name": "Nusantara Cloud",
+    "category": "Software Development",
+    "candidate_required_location": "Surabaya (Hybrid)",
+    "salary": "Rp 4.500.000",
+    "tags": [
+      "React",
+      "TypeScript",
+      "CSS"
+    ]
+  },
+  {
+    "id": 1002,
+    "title": "Backend Intern",
+    "company_name": "Garuda Digital",
+    "category": "Software Development",
+    "candidate_required_location": "Jakarta (Onsite)",
+    "salary": "Rp 4.000.000",
+    "tags": [
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Docker"
+    ]
+  },
+  {
+    "id": 1003,
+    "title": "Mobile Developer Intern",
+    "company_name": "Arunika Tech",
+    "category": "Software Development",
+    "candidate_required_location": "Bandung (Hybrid)",
+    "salary": "Rp 3.500.000",
+    "tags": [
+      "Flutter",
+      "Dart",
+      "Firebase"
+    ]
+  },
+  {
+    "id": 1004,
+    "title": "UI/UX Design Intern",
+    "company_name": "Kreasi Pixel",
+    "category": "Software Development",
+    "candidate_required_location": "Yogyakarta (Remote)",
+    "salary": "Rp 3.000.000",
+    "tags": [
+      "Figma",
+      "UX Research",
+      "CSS"
+    ]
+  },
+  {
+    "id": 1005,
+    "title": "Data Analyst Intern",
+    "company_name": "Data Samudra",
+    "category": "Software Development",
+    "candidate_required_location": "Jakarta (Hybrid)",
+    "salary": "Rp 5.000.000",
+    "tags": [
+      "Python",
+      "SQL",
+      "Tableau"
+    ]
+  },
+  {
+    "id": 1006,
+    "title": "DevOps Intern",
+    "company_name": "Awan Nusantara",
+    "category": "Software Development",
+    "candidate_required_location": "Surabaya (Onsite)",
+    "salary": "Rp 4.500.000",
+    "tags": [
+      "Docker",
+      "Linux",
+      "CI/CD",
+      "Git"
+    ]
+  },
+  {
+    "id": 1007,
+    "title": "Fullstack Intern",
+    "company_name": "Mitra Solusi Teknologi",
+    "category": "Software Development",
+    "candidate_required_location": "Malang (Hybrid)",
+    "salary": "Rp 4.000.000",
+    "tags": [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "TypeScript"
+    ]
+  },
+  {
+    "id": 1008,
+    "title": "QA Engineer Intern",
+    "company_name": "Uji Cermat",
+    "category": "Software Development",
+    "candidate_required_location": "Jakarta (Remote)",
+    "salary": "Rp 3.500.000",
+    "tags": [
+      "Selenium",
+      "Testing",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 1009,
+    "title": "Cyber Security Intern",
+    "company_name": "Benteng Siber",
+    "category": "Software Development",
+    "candidate_required_location": "Bandung (Onsite)",
+    "salary": "Rp 5.000.000",
+    "tags": [
+      "Networking",
+      "Linux",
+      "Wireshark"
+    ]
+  },
+  {
+    "id": 1010,
+    "title": "Machine Learning Intern",
+    "company_name": "Cerdas AI",
+    "category": "Software Development",
+    "candidate_required_location": "Jakarta (Hybrid)",
+    "salary": "Rp 6.000.000",
+    "tags": [
+      "Python",
+      "TensorFlow",
+      "Pandas"
+    ]
+  },
+  {
+    "id": 1011,
+    "title": "Web Developer Intern",
+    "company_name": "Warung Digital",
+    "category": "Software Development",
+    "candidate_required_location": "Surabaya (Remote)",
+    "salary": "Rp 3.000.000",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React"
+    ]
+  },
+  {
+    "id": 1012,
+    "title": "IoT Engineer Intern",
+    "company_name": "Sensor Bangsa",
+    "category": "Software Development",
+    "candidate_required_location": "Surabaya (Onsite)",
+    "salary": "Rp 4.000.000",
+    "tags": [
+      "Arduino",
+      "MQTT",
+      "C++"
+    ]
+  },
+  {
+    "id": 1013,
+    "title": "Cloud Engineer Intern",
+    "company_name": "Langit Cloud",
+    "category": "Software Development",
+    "candidate_required_location": "Jakarta (Remote)",
+    "salary": "Rp 5.500.000",
+    "tags": [
+      "AWS",
+      "Docker",
+      "Terraform",
+      "Linux"
+    ]
+  },
+  {
+    "id": 1014,
+    "title": "Product Management Intern",
+    "company_name": "Produk Kita",
+    "category": "Software Development",
+    "candidate_required_location": "Bandung (Hybrid)",
+    "salary": "Rp 3.500.000",
+    "tags": [
+      "Agile",
+      "Figma",
+      "SQL"
+    ]
+  },
+  {
+    "id": 1015,
+    "title": "Software Engineer Intern",
+    "company_name": "Teknologi Merdeka",
+    "category": "Software Development",
+    "candidate_required_location": "Yogyakarta (Hybrid)",
+    "salary": "Rp 4.500.000",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Git",
+      "Docker"
+    ]
+  }
+]
