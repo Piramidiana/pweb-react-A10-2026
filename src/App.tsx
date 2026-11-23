@@ -9,8 +9,10 @@ import { JobExplorer } from "./components/JobExplorer"
 import { ManualApplicationForm } from "./components/ManualApplicationForm"
 import { SkillProfile } from "./components/SkillProfile"
 import { InterviewPrepPanel } from "./components/InterviewPrepTimer"
+import { StatsCards } from "./components/StatsCards"
+import { OfferComparator } from "./components/OfferComparator"
 
-type View = "explore" | "manual" | "applications"
+type View = "explore" | "manual" | "applications" | "offers"
 
 type PendingDelete = {
     application: Application
@@ -176,10 +178,13 @@ function App() {
         })
     }
 
+    const offerCount = applications.filter((item) => item.status === "OFFER").length
+
     const navItems: { id: View; label: string }[] = [
         { id: "explore", label: "Eksplorasi lowongan" },
         { id: "manual", label: "Tambah lamaran" },
         { id: "applications", label: `Lamaran saya (${applications.length})` },
+        { id: "offers", label: `Bandingkan offer (${offerCount})` },
     ]
 
     return (
@@ -219,6 +224,8 @@ function App() {
                     </button>
                 ))}
             </nav>
+
+            <StatsCards applications={applications} />
 
             {view === "explore" && (
                 <div className="page-grid">
@@ -317,6 +324,15 @@ function App() {
                             ))}
                         </div>
                     )}
+                </section>
+            )}
+            
+            {view === "offers" && (
+                <section className="content-panel standalone-panel">
+                    <OfferComparator
+                        applications={applications}
+                        kaptenSkills={kaptenSkills}
+                    />
                 </section>
             )}
 
