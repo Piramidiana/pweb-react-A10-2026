@@ -8,7 +8,7 @@ import {
 import { JobExplorer } from "./components/JobExplorer"
 import { ManualApplicationForm } from "./components/ManualApplicationForm"
 import { SkillProfile } from "./components/SkillProfile"
-import { InterviewPrepPanel } from "./components/InterviewPrepTimer"
+import { ApplicationDetail } from "./components/ApplicationDetail"
 import { StatsCards } from "./components/StatsCards"
 import { OfferComparator } from "./components/OfferComparator"
 
@@ -57,6 +57,7 @@ function App() {
         ["React", "TypeScript", "CSS"],
     )
     const [view, setView] = useState<View>("explore")
+    const [selectedId, setSelectedId] = useState<string | null>(null)
     const [pendingDeletes, setPendingDeletes] = useState<PendingDelete[]>([])
     const pendingDeletesRef = useRef<PendingDelete[]>([])
     const deleteTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -129,6 +130,12 @@ function App() {
         )
     }
 
+    function updateApplication(next: Application) {
+        setApplications((current) =>
+            current.map((item) => (item.id === next.id ? next : item)),
+        )
+    }
+
     function deleteApplication(id: string) {
         const index = applications.findIndex((item) => item.id === id)
         const application = applications[index]
@@ -178,6 +185,14 @@ function App() {
         })
     }
 
+    const selectedApplication =
+        applications.find((item) => item.id === selectedId) ?? null
+
+    function deleteFromDetail(id: string) {
+        setSelectedId(null)
+        deleteApplication(id)
+    }
+
     const offerCount = applications.filter((item) => item.status === "OFFER").length
 
     const navItems: { id: View; label: string }[] = [
@@ -217,7 +232,10 @@ function App() {
                     <button
                         className={view === item.id ? "nav-button active" : "nav-button"}
                         key={item.id}
-                        onClick={() => setView(item.id)}
+                        onClick={() => {
+                            setView(item.id)
+                            if (item.id === "applications") setSelectedId(null)
+                        }}
                         type="button"
                     >
                         {item.label}
@@ -255,7 +273,20 @@ function App() {
                 </section>
             )}
 
-            {view === "applications" && (
+            {view === "applications" && selectedApplication && (
+                <section className="content-panel standalone-panel">
+                    <ApplicationDetail
+                        application={selectedApplication}
+                        key={selectedApplication.id}
+                        kaptenSkills={kaptenSkills}
+                        onClose={() => setSelectedId(null)}
+                        onDelete={deleteFromDetail}
+                        onUpdate={updateApplication}
+                    />
+                </section>
+            )}
+
+            {view === "applications" && !selectedApplication && (
                 <section className="content-panel standalone-panel">
                     <div className="section-heading">
                         <div>
@@ -308,25 +339,32 @@ function App() {
                                             )}
                                             <span>{application.requiredSkills.length} skill</span>
                                         </div>
-                                        {application.status === "INTERVIEW" && (
-                                            <InterviewPrepPanel />
-                                        )}
                                     </div>
-                                    <button
-                                        aria-label={`Hapus lamaran ${application.role} di ${application.company}`}
-                                        className="button button-quiet button-danger"
-                                        onClick={() => deleteApplication(application.id)}
-                                        type="button"
-                                    >
-                                        Hapus
-                                    </button>
+                                    <div className="application-card-actions">
+                                        <button
+                                            aria-label={`Lihat detail ${application.role} di ${application.company}`}
+                                            className="button button-secondary button-small"
+                                            onClick={() => setSelectedId(application.id)}
+                                            type="button"
+                                        >
+                                            Detail
+                                        </button>
+                                        <button
+                                            aria-label={`Hapus lamaran ${application.role} di ${application.company}`}
+                                            className="button button-quiet button-danger button-small"
+                                            onClick={() => deleteApplication(application.id)}
+                                            type="button"
+                                        >
+                                            Hapus
+                                        </button>
+                                    </div>
                                 </article>
                             ))}
                         </div>
                     )}
                 </section>
             )}
-            
+
             {view === "offers" && (
                 <section className="content-panel standalone-panel">
                     <OfferComparator

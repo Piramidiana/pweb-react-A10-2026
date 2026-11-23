@@ -1,0 +1,247 @@
+/* Gaya Fitur 4 (Detail Lamaran). Berawalan .detail- agar tidak bentrok. */
+
+.application-card-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 6px;
+}
+
+.detail {
+    display: grid;
+    gap: 18px;
+}
+
+.detail-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.detail-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+}
+
+.detail-header h2 {
+    margin: 0;
+    font-size: 20px;
+    overflow-wrap: anywhere;
+}
+
+.detail-header p {
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.detail-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.detail-ghost {
+    padding: 5px 8px;
+    border-radius: 7px;
+    background: #fff4dc;
+    color: #8a5a00;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+}
+
+.detail-column {
+    display: grid;
+    gap: 16px;
+    min-width: 0;
+}
+
+.detail-section {
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+}
+
+.detail-section h3 {
+    margin: 0 0 12px;
+    font-size: 13px;
+}
+
+.detail-section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.detail-count {
+    color: var(--muted);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+}
+
+.detail-hint {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.detail-stages {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+    margin: 0 0 14px;
+    padding: 0;
+    list-style: none;
+}
+
+.detail-stages li {
+    padding-top: 7px;
+    border-top: 3px solid var(--line);
+    color: #8a948e;
+    font-size: 9px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.detail-stages .stage-done {
+    border-top-color: #8fc7a9;
+    color: var(--green-dark);
+}
+
+.detail-stages .stage-current {
+    border-top-color: var(--green);
+    color: var(--green);
+}
+
+.detail-targets {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+}
+
+.detail-targets > span {
+    margin-right: 4px;
+    color: var(--muted);
+}
+
+.detail-transition {
+    display: grid;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 12px;
+    border: 1px solid #e2ece4;
+    border-radius: 10px;
+    background: #f8fbf8;
+}
+
+.detail-progress {
+    height: 7px;
+    margin: 10px 0 12px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #edf1ee;
+}
+
+.detail-progress span {
+    display: block;
+    height: 100%;
+    background: var(--green);
+    transition: width 160ms ease;
+}
+
+.detail-checklist,
+.detail-log {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.detail-checklist {
+    display: grid;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.detail-checklist li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 6px 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.detail-checklist label {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    align-items: center;
+    gap: 9px;
+    font-size: 12px;
+}
+
+.detail-checklist label span {
+    overflow-wrap: anywhere;
+}
+
+.detail-checklist .check-done span {
+    color: #8a948e;
+    text-decoration: line-through;
+}
+
+.detail-inline-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.detail-inline-form input {
+    min-width: 0;
+    flex: 1;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    font-size: 12px;
+}
+
+.detail-log {
+    display: grid;
+    gap: 10px;
+    padding-left: 12px;
+    border-left: 2px solid var(--line);
+}
+
+.detail-log li {
+    display: grid;
+    gap: 1px;
+    font-size: 12px;
+}
+
+.detail-log time {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+@media (max-width: 760px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
