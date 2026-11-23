@@ -1,0 +1,144 @@
+/* Gaya Fitur 7 (Dashboard & Offer Comparator). Sengaja sederhana dan berawalan
+   .stat- / .offer- supaya tidak bentrok dengan CSS fitur lain. */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-block: 16px;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 16px;
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #5b6678;
+}
+
+.stat-value {
+    font-size: 1.6rem;
+    color: #12305e;
+}
+
+.offer-comparator {
+    margin-block: 24px;
+    padding: 16px;
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+    background: #f7f9fc;
+}
+
+.offer-comparator-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.offer-comparator-header h2,
+.offer-comparator-header p {
+    margin: 0;
+}
+
+.offer-pickers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.offer-pickers label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.85rem;
+}
+
+.offer-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.offer-card {
+    padding: 16px;
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.offer-card-best {
+    border-color: #2f6fdd;
+    box-shadow: 0 0 0 1px #2f6fdd;
+}
+
+.offer-card-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.offer-card-header h3,
+.offer-card-header p {
+    margin: 0;
+}
+
+.offer-badge {
+    align-self: flex-start;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #e3edff;
+    color: #1d4fb0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.offer-rows {
+    margin: 16px 0;
+}
+
+.offer-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1.4fr auto;
+    gap: 8px;
+    padding-block: 6px;
+    border-bottom: 1px solid #eef1f6;
+    font-size: 0.9rem;
+}
+
+.offer-row dt {
+    color: #5b6678;
+}
+
+.offer-row dd {
+    margin: 0;
+}
+
+.offer-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 6px;
+    background: #eaf1fd;
+}
+
+.offer-total strong {
+    font-size: 1.4rem;
+    color: #12305e;
+}
+
+.offer-empty,
+.offer-tie {
+    margin: 8px 0 0;
+    color: #5b6678;
+}
