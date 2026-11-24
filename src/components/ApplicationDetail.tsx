@@ -17,6 +17,7 @@ import {
     isGhostingRisk,
     parseRupiah,
     removeChecklistItem,
+    simulateDays,
     toggleChecklistItem,
     type TransitionErrors,
 } from "../utils"
@@ -90,6 +91,8 @@ export function ApplicationDetail({
     const progress = getChecklistProgress(application)
     const match = calculateSkillMatch(application.requiredSkills, kaptenSkills)
     const stageIndex = STAGES.indexOf(application.status)
+    const canSimulate =
+        application.status === "APPLIED" || application.status === "SCREENING"
 
     function selectTarget(status: ApplicationStatus) {
         setTarget(status)
@@ -157,13 +160,24 @@ export function ApplicationDetail({
                 >
                     ← Kembali ke daftar
                 </button>
-                <button
-                    className="button button-quiet button-danger button-small"
-                    onClick={() => onDelete(application.id)}
-                    type="button"
-                >
-                    Hapus lamaran
-                </button>
+                <div className="detail-top-actions">
+                    {canSimulate && (
+                        <button
+                            className="button button-quiet button-small"
+                            onClick={() => onUpdate(simulateDays(application, 15))}
+                            type="button"
+                        >
+                            Simulasi +15 Hari
+                        </button>
+                    )}
+                    <button
+                        className="button button-quiet button-danger button-small"
+                        onClick={() => onDelete(application.id)}
+                        type="button"
+                    >
+                        Hapus lamaran
+                    </button>
+                </div>
             </div>
 
             <header className="detail-header">

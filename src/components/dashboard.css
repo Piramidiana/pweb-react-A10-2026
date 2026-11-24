@@ -13,27 +13,27 @@
     flex-direction: column;
     gap: 4px;
     padding: 12px 16px;
-    border: 1px solid #d9e0ea;
-    border-radius: 8px;
-    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
 }
 
 .stat-label {
     font-size: 0.8rem;
-    color: #5b6678;
+    color: var(--muted);
 }
 
 .stat-value {
     font-size: 1.6rem;
-    color: #12305e;
+    color: var(--green-dark);
 }
 
 .offer-comparator {
     margin-block: 24px;
     padding: 16px;
-    border: 1px solid #d9e0ea;
-    border-radius: 8px;
-    background: #f7f9fc;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #f8fbf8;
 }
 
 .offer-comparator-header {
@@ -70,14 +70,14 @@
 
 .offer-card {
     padding: 16px;
-    border: 1px solid #d9e0ea;
-    border-radius: 8px;
-    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
 }
 
 .offer-card-best {
-    border-color: #2f6fdd;
-    box-shadow: 0 0 0 1px #2f6fdd;
+    border-color: var(--green);
+    box-shadow: 0 0 0 1px var(--green);
 }
 
 .offer-card-header {
@@ -95,8 +95,8 @@
     align-self: flex-start;
     padding: 2px 8px;
     border-radius: 999px;
-    background: #e3edff;
-    color: #1d4fb0;
+    background: var(--green-light);
+    color: var(--green-dark);
     font-size: 0.75rem;
     font-weight: 600;
     white-space: nowrap;
@@ -111,12 +111,12 @@
     grid-template-columns: 1.2fr 1.4fr auto;
     gap: 8px;
     padding-block: 6px;
-    border-bottom: 1px solid #eef1f6;
+    border-bottom: 1px solid var(--line);
     font-size: 0.9rem;
 }
 
 .offer-row dt {
-    color: #5b6678;
+    color: var(--muted);
 }
 
 .offer-row dd {
@@ -129,16 +129,16 @@
     align-items: center;
     padding: 10px 12px;
     border-radius: 6px;
-    background: #eaf1fd;
+    background: var(--green-light);
 }
 
 .offer-total strong {
     font-size: 1.4rem;
-    color: #12305e;
+    color: var(--green-dark);
 }
 
 .offer-empty,
 .offer-tie {
     margin: 8px 0 0;
-    color: #5b6678;
+    color: var(--muted);
 }

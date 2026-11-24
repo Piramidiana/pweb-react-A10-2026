@@ -19,6 +19,13 @@
     gap: 8px;
 }
 
+.detail-top-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
 .detail-header {
     display: flex;
     flex-wrap: wrap;
