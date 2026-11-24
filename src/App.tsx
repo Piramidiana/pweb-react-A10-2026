@@ -9,6 +9,8 @@ import { JobExplorer } from "./components/JobExplorer"
 import { ManualApplicationForm } from "./components/ManualApplicationForm"
 import { SkillProfile } from "./components/SkillProfile"
 import { ApplicationDetail } from "./components/ApplicationDetail"
+import { ClashBanner } from "./components/ClashBanner"
+import { WarRoom } from "./components/WarRoom"
 import { StatsCards } from "./components/StatsCards"
 import { OfferComparator } from "./components/OfferComparator"
 
@@ -243,6 +245,8 @@ function App() {
                 ))}
             </nav>
 
+            <ClashBanner applications={applications} />
+
             <StatsCards applications={applications} />
 
             {view === "explore" && (
@@ -288,80 +292,14 @@ function App() {
 
             {view === "applications" && !selectedApplication && (
                 <section className="content-panel standalone-panel">
-                    <div className="section-heading">
-                        <div>
-                            <p className="eyebrow">RUANG KENDALI</p>
-                            <h2>Lamaran tersimpan</h2>
-                            <p className="section-description">
-                                Data tersimpan otomatis di browser ini.
-                            </p>
-                        </div>
-                        <button
-                            className="button button-primary"
-                            onClick={() => setView("manual")}
-                            type="button"
-                        >
-                            + Tambah lamaran
-                        </button>
-                    </div>
-
-                    {applications.length === 0 ? (
-                        <div className="empty-state">
-                            <span className="empty-icon">+</span>
-                            <h3>Belum ada lamaran</h3>
-                            <p>Simpan lowongan atau tambahkan lamaran secara manual.</p>
-                            <button
-                                className="button button-secondary"
-                                onClick={() => setView("explore")}
-                                type="button"
-                            >
-                                Jelajahi lowongan
-                            </button>
-                        </div>
-                    ) : (
-                        <div className="application-list">
-                            {applications.map((application) => (
-                                <article className="application-card" key={application.id}>
-                                    <div className="application-card-main">
-                                        <div className="application-title-row">
-                                            <div>
-                                                <h3>{application.role}</h3>
-                                                <p>{application.company}</p>
-                                            </div>
-                                            <span className={`status-pill status-${application.status.toLowerCase()}`}>
-                                                {application.status}
-                                            </span>
-                                        </div>
-                                        <div className="application-meta">
-                                            <span>{application.workMode}</span>
-                                            {application.cvVersion && (
-                                                <span>CV: {application.cvVersion}</span>
-                                            )}
-                                            <span>{application.requiredSkills.length} skill</span>
-                                        </div>
-                                    </div>
-                                    <div className="application-card-actions">
-                                        <button
-                                            aria-label={`Lihat detail ${application.role} di ${application.company}`}
-                                            className="button button-secondary button-small"
-                                            onClick={() => setSelectedId(application.id)}
-                                            type="button"
-                                        >
-                                            Detail
-                                        </button>
-                                        <button
-                                            aria-label={`Hapus lamaran ${application.role} di ${application.company}`}
-                                            className="button button-quiet button-danger button-small"
-                                            onClick={() => deleteApplication(application.id)}
-                                            type="button"
-                                        >
-                                            Hapus
-                                        </button>
-                                    </div>
-                                </article>
-                            ))}
-                        </div>
-                    )}
+                    <WarRoom
+                        applications={applications}
+                        kaptenSkills={kaptenSkills}
+                        onAdd={() => setView("manual")}
+                        onDelete={deleteApplication}
+                        onOpen={setSelectedId}
+                        onUpdate={updateApplication}
+                    />
                 </section>
             )}
 

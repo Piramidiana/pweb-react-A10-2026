@@ -5,6 +5,7 @@ import type {
     TransitionData,
 } from "../types"
 import { formatRupiah } from "./currency"
+import { shiftLastUpdated } from "./ghosting"
 import {
     canTransition,
     validateTransitionData,
@@ -111,6 +112,25 @@ export function applyTransition(
             lastUpdatedAt: now,
             activityLogs: [createLog(message, now), ...application.activityLogs],
         },
+    }
+}
+
+/**
+ * Tombol "Simulasi +15 Hari": memundurkan lastUpdatedAt agar badge Rawan Ghosting
+ * bisa diuji saat demo. Dicatat di activity log supaya jelas ini data uji.
+ */
+export function simulateDays(
+    application: Application,
+    days: number = 15,
+    now: string = new Date().toISOString(),
+): Application {
+    const shifted = shiftLastUpdated(application, days)
+    return {
+        ...shifted,
+        activityLogs: [
+            createLog(`Simulasi +${days} hari (uji Rawan Ghosting)`, now),
+            ...shifted.activityLogs,
+        ],
     }
 }
 
