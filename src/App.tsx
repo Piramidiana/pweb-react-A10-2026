@@ -115,6 +115,7 @@ function App() {
 
         const application = createApplication(details)
         setApplications((current) => [application, ...current])
+        setSelectedId(null)
         setView("applications")
         return true
     }
