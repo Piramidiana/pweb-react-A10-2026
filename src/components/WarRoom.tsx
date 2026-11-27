@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import type { Application } from "../types"
+import { useSlashFocus } from "../hooks"
 import {
     ALL_STATUSES,
     DEFAULT_FILTERS,
@@ -36,6 +37,8 @@ export function WarRoom({
     onAdd,
 }: WarRoomProps) {
     const [filters, setFilters] = useState<PipelineFilters>(DEFAULT_FILTERS)
+    const searchRef = useRef<HTMLInputElement>(null)
+    useSlashFocus(searchRef)
 
     // Semua turunan dihitung langsung saat render, tanpa useState tambahan.
     const visible = getPipelineView(applications, filters)
@@ -80,10 +83,13 @@ export function WarRoom({
                         <label className="war-search">
                             <span className="sr-only">Cari lamaran</span>
                             <input
+                                aria-keyshortcuts="/"
                                 onChange={(event) => patchFilters({ query: event.target.value })}
                                 placeholder="Cari perusahaan, posisi, CV, atau skill..."
+                                ref={searchRef}
                                 value={filters.query}
                             />
+                            <kbd aria-hidden="true" className="search-hint">/</kbd>
                         </label>
                         <label className="war-select">
                             <span className="sr-only">Filter status</span>

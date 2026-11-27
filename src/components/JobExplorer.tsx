@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import type { Application, JobListing, SkillMatch } from "../types"
-import { useDebounce } from "../hooks"
+import { useDebounce, useSlashFocus } from "../hooks"
 import { fetchJobs, type JobSource } from "../services"
 import {
     calculateSkillMatch,
@@ -28,6 +28,8 @@ export function JobExplorer({
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
     const [retryCount, setRetryCount] = useState(0)
+    const searchRef = useRef<HTMLInputElement>(null)
+    useSlashFocus(searchRef)
     const [keyword, setKeyword] = useState("")
     const [category, setCategory] = useState("Semua kategori")
     const debouncedKeyword = useDebounce(keyword, 400)
@@ -149,10 +151,13 @@ export function JobExplorer({
                     <span aria-hidden="true" className="search-icon">⌕</span>
                     <span className="sr-only">Cari lowongan</span>
                     <input
+                        aria-keyshortcuts="/"
                         onChange={(event) => setKeyword(event.target.value)}
                         placeholder="Cari posisi, perusahaan, atau skill..."
+                        ref={searchRef}
                         value={keyword}
                     />
+                    <kbd aria-hidden="true" className="search-hint">/</kbd>
                 </label>
                 <label className="select-field">
                     <span className="sr-only">Filter kategori</span>

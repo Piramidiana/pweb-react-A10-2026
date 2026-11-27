@@ -1081,3 +1081,33 @@ a:focus-visible {
         justify-content: space-between;
     }
 }
+
+.war-search {
+    position: relative;
+    display: block;
+}
+
+.search-hint {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    display: grid;
+    min-width: 20px;
+    height: 22px;
+    place-items: center;
+    padding: 0 6px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.search-field input:focus ~ .search-hint,
+.war-search input:focus ~ .search-hint {
+    display: none;
+}
