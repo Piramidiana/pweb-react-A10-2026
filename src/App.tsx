@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import type { Application, JobListing, WorkMode } from "./types"
-import { useLocalStorage } from "./hooks"
+import { useLocalStorage, useTheme } from "./hooks"
 import {
     hasSkill,
     isDuplicateApplication,
@@ -58,6 +58,7 @@ function App() {
         "aku-mw-magang:kaptenSkills",
         ["React", "TypeScript", "CSS"],
     )
+    const [theme, toggleTheme] = useTheme()
     const [view, setView] = useState<View>("explore")
     const [selectedId, setSelectedId] = useState<string | null>(null)
     const [pendingDeletes, setPendingDeletes] = useState<PendingDelete[]>([])
@@ -212,7 +213,17 @@ function App() {
                     <span className="brand-mark">M</span>
                     <span>Aku Mw Magang</span>
                 </a>
-                <span className="topbar-note">Ruang kendali pencarian magang</span>
+                <div className="topbar-actions">
+                    <span className="topbar-note">Ruang kendali pencarian magang</span>
+                    <button
+                        aria-pressed={theme === "dark"}
+                        className="theme-toggle"
+                        onClick={toggleTheme}
+                        type="button"
+                    >
+                        {theme === "dark" ? "Mode terang" : "Mode gelap"}
+                    </button>
+                </div>
             </header>
 
             <section className="hero">

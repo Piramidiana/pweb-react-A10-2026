@@ -1082,6 +1082,27 @@ a:focus-visible {
     }
 }
 
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.theme-toggle {
+    height: 34px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.theme-toggle:hover {
+    border-color: var(--green);
+}
+
 .war-search {
     position: relative;
     display: block;

@@ -1,0 +1,331 @@
+html[data-theme="dark"] {
+    color-scheme: dark;
+    color: #e6efe9;
+    background: #0f1713;
+    --ink: #e6efe9;
+    --muted: #94a39a;
+    --line: #2a3a32;
+    --green: #3fb882;
+    --green-dark: #5fcf9c;
+    --green-light: #173126;
+    --surface: #17211c;
+}
+
+html[data-theme="dark"] body {
+    background: #0f1713;
+    color: #e6efe9;
+}
+
+html[data-theme="dark"] button:focus-visible,
+html[data-theme="dark"] input:focus-visible,
+html[data-theme="dark"] select:focus-visible,
+html[data-theme="dark"] a:focus-visible {
+    outline: 3px solid hsl(149 38% 37%);
+}
+
+html[data-theme="dark"] .nav-button,
+html[data-theme="dark"] .source-option {
+    color: hsl(147 5% 58%);
+}
+
+html[data-theme="dark"] .skill-chip {
+    border: 1px solid hsl(140 27% 18%);
+    background: hsl(132 26% 12%);
+    color: hsl(146 29% 70%);
+}
+
+html[data-theme="dark"] .skill-chip button {
+    color: hsl(149 10% 49%);
+}
+
+html[data-theme="dark"] .inline-form input,
+html[data-theme="dark"] .form-field input,
+html[data-theme="dark"] .form-field select,
+html[data-theme="dark"] .search-field input,
+html[data-theme="dark"] .select-field select {
+    border: 1px solid hsl(130 11% 18%);
+    background: hsl(0 0% 9%);
+}
+
+html[data-theme="dark"] .button-primary {
+    color: hsl(0 0% 9%);
+}
+
+html[data-theme="dark"] .button-secondary {
+    border-color: hsl(135 14% 18%);
+    background: hsl(0 0% 9%);
+    color: hsl(147 16% 70%);
+}
+
+html[data-theme="dark"] .button-secondary:hover {
+    background: hsl(120 18% 12%);
+}
+
+html[data-theme="dark"] .button-saved {
+    background: hsl(135 17% 13%);
+    color: hsl(145 5% 48%);
+}
+
+html[data-theme="dark"] .button-quiet {
+    color: hsl(147 5% 58%);
+}
+
+html[data-theme="dark"] .button-danger {
+    color: hsl(0 33% 60%);
+}
+
+html[data-theme="dark"] .button-danger:hover {
+    background: hsl(9 45% 11%);
+}
+
+html[data-theme="dark"] .storage-note {
+    color: hsl(140 5% 50%);
+}
+
+html[data-theme="dark"] .storage-note span {
+    color: hsl(148 35% 57%);
+}
+
+html[data-theme="dark"] .source-switch {
+    background: hsl(120 14% 11%);
+}
+
+html[data-theme="dark"] .source-option.selected {
+    background: hsl(0 0% 9%);
+}
+
+html[data-theme="dark"] .search-icon {
+    color: hsl(140 5% 48%);
+}
+
+html[data-theme="dark"] .job-card,
+html[data-theme="dark"] .application-card {
+    background: hsl(0 0% 9%);
+}
+
+html[data-theme="dark"] .company-avatar {
+    border: 1px solid hsl(136 22% 17%);
+    background: hsl(132 24% 12%);
+}
+
+html[data-theme="dark"] .job-title-block p,
+html[data-theme="dark"] .application-card-main p {
+    color: hsl(150 4% 52%);
+}
+
+html[data-theme="dark"] .match-green {
+    background: hsl(136 35% 14%);
+    color: hsl(147 45% 66%);
+}
+
+html[data-theme="dark"] .match-yellow {
+    background: hsl(44 45% 15%);
+    color: hsl(43 45% 64%);
+}
+
+html[data-theme="dark"] .match-red {
+    background: hsl(10 45% 12%);
+    color: hsl(5 45% 60%);
+}
+
+html[data-theme="dark"] .job-details span,
+html[data-theme="dark"] .application-meta span {
+    background: hsl(120 11% 12%);
+    color: hsl(145 5% 56%);
+}
+
+html[data-theme="dark"] .detail-label {
+    color: hsl(142 4% 51%);
+}
+
+html[data-theme="dark"] .matched-chip {
+    background: hsl(133 33% 13%);
+    color: hsl(141 39% 48%);
+}
+
+html[data-theme="dark"] .missing-chip {
+    background: hsl(120 4% 13%);
+    color: hsl(144 5% 57%);
+}
+
+html[data-theme="dark"] .loading-spinner {
+    border: 2px solid hsl(135 21% 19%);
+}
+
+html[data-theme="dark"] .error-state {
+    border: 1px solid hsl(10 45% 19%);
+    background: hsl(15 45% 10%);
+}
+
+html[data-theme="dark"] .state-symbol {
+    background: hsl(11 45% 15%);
+    color: hsl(8 42% 60%);
+}
+
+html[data-theme="dark"] .empty-icon {
+    background: hsl(132 20% 13%);
+}
+
+html[data-theme="dark"] .form-step {
+    border: 1px solid hsl(138 25% 18%);
+}
+
+html[data-theme="dark"] .form-field {
+    color: hsl(146 9% 68%);
+}
+
+html[data-theme="dark"] .form-field b {
+    color: hsl(8 45% 60%);
+}
+
+html[data-theme="dark"] .form-field input::placeholder,
+html[data-theme="dark"] .search-field input::placeholder {
+    color: hsl(140 5% 39%);
+}
+
+html[data-theme="dark"] .field-error {
+    color: hsl(5 45% 60%);
+}
+
+html[data-theme="dark"] .form-alert {
+    background: hsl(11 45% 12%);
+    color: hsl(6 45% 57%);
+}
+
+html[data-theme="dark"] .status-pill {
+    background: hsl(120 8% 13%);
+    color: hsl(142 5% 60%);
+}
+
+html[data-theme="dark"] .status-applied,
+html[data-theme="dark"] .status-screening {
+    background: hsl(220 45% 12%);
+    color: hsl(218 42% 58%);
+}
+
+html[data-theme="dark"] .status-interview {
+    background: hsl(260 45% 12%);
+    color: hsl(265 33% 60%);
+}
+
+html[data-theme="dark"] .status-offer {
+    background: hsl(130 38% 14%);
+    color: hsl(137 42% 48%);
+}
+
+html[data-theme="dark"] .status-rejected,
+html[data-theme="dark"] .status-ghosted {
+    background: hsl(10 45% 12%);
+    color: hsl(7 39% 60%);
+}
+
+html[data-theme="dark"] .prep-panel-wrap {
+    border-top: 1px solid hsl(120 10% 14%);
+}
+
+html[data-theme="dark"] .timer-panel {
+    border: 1px solid hsl(132 21% 17%);
+    background: hsl(120 27% 11%);
+}
+
+html[data-theme="dark"] .timer-question {
+    color: hsl(139 10% 68%);
+}
+
+html[data-theme="dark"] .timer-finished {
+    color: hsl(8 42% 60%);
+}
+
+html[data-theme="dark"] .app-footer {
+    color: hsl(138 4% 47%);
+}
+
+html[data-theme="dark"] .offer-comparator {
+    background: hsl(120 27% 11%);
+}
+
+html[data-theme="dark"] .detail-ghost {
+    background: hsl(41 45% 15%);
+    color: hsl(39 45% 70%);
+}
+
+html[data-theme="dark"] .detail-stages li {
+    color: hsl(144 4% 46%);
+}
+
+html[data-theme="dark"] .detail-stages .stage-done {
+    border-top-color: hsl(148 33% 37%);
+}
+
+html[data-theme="dark"] .detail-transition {
+    border: 1px solid hsl(132 21% 17%);
+    background: hsl(120 27% 11%);
+}
+
+html[data-theme="dark"] .detail-progress {
+    background: hsl(135 12% 14%);
+}
+
+html[data-theme="dark"] .detail-checklist .check-done span {
+    color: hsl(144 4% 46%);
+}
+
+html[data-theme="dark"] .clash-banner {
+    border: 1px solid hsl(8 45% 22%);
+    border-left: 4px solid hsl(5 45% 60%);
+    background: hsl(9 45% 11%);
+    color: hsl(5 45% 47%);
+}
+
+html[data-theme="dark"] .war-search input,
+html[data-theme="dark"] .war-select select {
+    background: hsl(0 0% 9%);
+}
+
+html[data-theme="dark"] .war-toggle {
+    background: hsl(0 0% 9%);
+}
+
+html[data-theme="dark"] .war-toggle-on {
+    border-color: hsl(35 45% 38%);
+    background: hsl(42 45% 13%);
+    color: hsl(39 45% 70%);
+}
+
+html[data-theme="dark"] .war-ghost {
+    background: hsl(41 45% 15%);
+    color: hsl(39 45% 70%);
+}
+
+html[data-theme="dark"] .war-match-green {
+    color: hsl(150 45% 68%);
+}
+
+html[data-theme="dark"] .war-match-yellow {
+    color: hsl(41 45% 68%);
+}
+
+html[data-theme="dark"] .war-match-red {
+    color: hsl(5 45% 60%);
+}
+
+html[data-theme="dark"] .war-progress {
+    background: hsl(135 12% 14%);
+}
+
+html[data-theme="dark"] input:not([type="checkbox"]),
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+    border-color: var(--line);
+    background: #101a15;
+    color: var(--ink);
+}
+
+html[data-theme="dark"] input::placeholder {
+    color: #6f7f76;
+}
+
+html[data-theme="dark"] .button-icon {
+    background: var(--green);
+    color: #0f1713;
+}
